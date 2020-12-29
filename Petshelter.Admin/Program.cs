@@ -16,7 +16,7 @@ namespace Petshelter.Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddPetForm());
+            Application.Run(new MainForm());
         }
     }
 }
