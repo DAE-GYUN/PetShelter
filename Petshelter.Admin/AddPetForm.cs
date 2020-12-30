@@ -18,6 +18,23 @@ namespace Petshelter.Admin
             InitializeComponent();
         }
 
+        public AddPetForm(string family) : this()
+        {
+            _family = family;
+        }
+
+        public string _family { get; set; }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            txeFamily.Text = _family;
+        }
+
         private void btnUpload_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "이미지 파일(.jpg)|*.jpg|모든 파일(*.*)|*.*";
