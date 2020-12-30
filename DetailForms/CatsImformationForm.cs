@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace PetShelter
 {
-    public partial class ShowDogsForm : Form
+    public partial class CatsImformationForm : Form
     {
-        public ShowDogsForm()
+        public CatsImformationForm()
         {
             InitializeComponent();
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
         }
     }
 }
