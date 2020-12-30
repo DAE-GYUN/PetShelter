@@ -18,5 +18,7 @@ namespace PetShelter.Data
         public int NumberOfChoice { get; set; }
         public string Content { get; set; }
         public System.DateTime ModifiedDate { get; set; }
+    
+        public virtual SurveyQuestion SurveyQuestion { get; set; }
     }
 }

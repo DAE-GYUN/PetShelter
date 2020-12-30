@@ -20,7 +20,7 @@ namespace PetShelter.Data
         public string Process { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual Pet Pet { get; set; }
         public virtual User User { get; set; }
+        public virtual Pet Pet { get; set; }
     }
 }

@@ -19,6 +19,7 @@ namespace PetShelter.Data
         {
             this.Adoptions = new HashSet<Adoption>();
             this.DissolutionOfAdoptions = new HashSet<DissolutionOfAdoption>();
+            this.Purchasings = new HashSet<Purchasing>();
             this.Surveys = new HashSet<Survey>();
         }
     
@@ -36,6 +37,8 @@ namespace PetShelter.Data
         public virtual ICollection<Adoption> Adoptions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DissolutionOfAdoption> DissolutionOfAdoptions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Purchasing> Purchasings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Survey> Surveys { get; set; }
     }

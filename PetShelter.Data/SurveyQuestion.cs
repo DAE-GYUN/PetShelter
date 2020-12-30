@@ -14,9 +14,18 @@ namespace PetShelter.Data
     
     public partial class SurveyQuestion
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SurveyQuestion()
+        {
+            this.SurveyChoices = new HashSet<SurveyChoice>();
+        }
+    
         public int SurveyQuestionID { get; set; }
         public string Title { get; set; }
         public string Type { get; set; }
         public System.DateTime ModifiedDate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SurveyChoice> SurveyChoices { get; set; }
     }
 }
