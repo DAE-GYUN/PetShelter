@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EFLibrary;
+using PetShelter.Data;
 
 namespace Petshelter.Admin
 {
@@ -16,6 +18,9 @@ namespace Petshelter.Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DbContextCreator.Context = () => new PetShelterEntities();
+
             Application.Run(new MainForm());
         }
     }

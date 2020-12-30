@@ -18,6 +18,7 @@ namespace PetShelter.Data
         public int PurchasingID { get; set; }
         public System.DateTime InvoiceDate { get; set; }
         public int ReceiveMoney { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
     
         public virtual Purchasing Purchasing { get; set; }
     }

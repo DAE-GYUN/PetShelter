@@ -23,17 +23,17 @@ namespace PetShelter.Data
     
         public int PetID { get; set; }
         public string Familly { get; set; }
-        public byte[] Image { get; set; }
+        public byte[] Picture { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
-        public bool Neutralized { get; set; }
+        public bool HasNeutralized { get; set; }
         public string Name { get; set; }
-        public string Unusual { get; set; }
-        public System.DateTime EntryDate { get; set; }
-        public string Breed { get; set; }
-        public string Disease { get; set; }
+        public string ETC { get; set; }
+        public string Species { get; set; }
+        public bool HasVaccinated { get; set; }
         public int Weight { get; set; }
-        public Nullable<int> AnimalRegistrationNumber { get; set; }
+        public bool HasAnimalRegistrated { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Adoption> Adoptions { get; set; }

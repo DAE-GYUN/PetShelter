@@ -12,10 +12,11 @@ namespace PetShelter.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class ServeyChoice
+    public partial class SurveyChoice
     {
-        public int ServeyQuestionID { get; set; }
+        public int SuveyQuestionID { get; set; }
         public int NumberOfChoice { get; set; }
         public string Content { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
     }
 }

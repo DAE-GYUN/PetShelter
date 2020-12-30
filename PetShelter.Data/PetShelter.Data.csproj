@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -53,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adoption.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
     <Compile Include="Dao\AdoptionDao.cs" />
     <Compile Include="Dao\Dao.cs" />
@@ -63,11 +64,8 @@
     <Compile Include="Dao\PurchasingDao.cs" />
     <Compile Include="Dao\SurveyDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
-    <Compile Include="DataBaseLog.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
-    </Compile>
     <Compile Include="DissolutionOfAdoption.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
     <Compile Include="EFLibrary\BaseDao.cs" />
     <Compile Include="EFLibrary\DbContextCreator.cs" />
@@ -76,76 +74,71 @@
     <Compile Include="EFLibrary\SingleKeyDao.cs" />
     <Compile Include="EFLibrary\TripleKeyDao.cs" />
     <Compile Include="ErrorLog.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PatShelter.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PatShelter.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PatShelter.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PatShelter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PatShelter.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PatShelter.edmx</DependentUpon>
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
     <Compile Include="Pet.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+      <DependentUpon>PetShelter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetShelter.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetShelter.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetShelter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetShelter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetShelter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetShelter.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchasing.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
-    <Compile Include="Servey.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+    <Compile Include="Survey.cs">
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
-    <Compile Include="ServeyChoice.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+    <Compile Include="SurveyChoice.cs">
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
-    <Compile Include="ServeyQuestion.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+    <Compile Include="SurveyQuestion.cs">
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>PatShelter.tt</DependentUpon>
+      <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="PatShelter.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PatShelter.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="PatShelter.edmx.diagram">
-      <DependentUpon>PatShelter.edmx</DependentUpon>
+    <EntityDeploy Include="PetShelter.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PetShelter.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PetShelter.edmx.diagram">
+      <DependentUpon>PetShelter.edmx</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="PatShelter.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PatShelter.Context.cs</LastGenOutput>
-      <DependentUpon>PatShelter.edmx</DependentUpon>
-    </Content>
-    <Content Include="PatShelter.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PatShelter.edmx</DependentUpon>
-      <LastGenOutput>PatShelter.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
+    <Content Include="PetShelter.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PetShelter.edmx</DependentUpon>
+      <LastGenOutput>PetShelter.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PetShelter.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PetShelter.edmx</DependentUpon>
+      <LastGenOutput>PetShelter.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

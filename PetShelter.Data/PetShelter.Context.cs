@@ -25,16 +25,15 @@ namespace PetShelter.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DataBaseLog> DataBaseLogs { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
         public virtual DbSet<Adoption> Adoptions { get; set; }
         public virtual DbSet<DissolutionOfAdoption> DissolutionOfAdoptions { get; set; }
         public virtual DbSet<Pet> Pets { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Purchasing> Purchasings { get; set; }
-        public virtual DbSet<Servey> Serveys { get; set; }
-        public virtual DbSet<ServeyChoice> ServeyChoices { get; set; }
-        public virtual DbSet<ServeyQuestion> ServeyQuestions { get; set; }
+        public virtual DbSet<Survey> Surveys { get; set; }
+        public virtual DbSet<SurveyChoice> SurveyChoices { get; set; }
+        public virtual DbSet<SurveyQuestion> SurveyQuestions { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

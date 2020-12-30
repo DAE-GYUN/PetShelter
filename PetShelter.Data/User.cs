@@ -19,7 +19,7 @@ namespace PetShelter.Data
         {
             this.Adoptions = new HashSet<Adoption>();
             this.DissolutionOfAdoptions = new HashSet<DissolutionOfAdoption>();
-            this.Serveys = new HashSet<Servey>();
+            this.Surveys = new HashSet<Survey>();
         }
     
         public int UserID { get; set; }
@@ -30,12 +30,13 @@ namespace PetShelter.Data
         public string HomeType { get; set; }
         public string EmailAddress { get; set; }
         public string Address { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Adoption> Adoptions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DissolutionOfAdoption> DissolutionOfAdoptions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Servey> Serveys { get; set; }
+        public virtual ICollection<Survey> Surveys { get; set; }
     }
 }
