@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace PetShelter.Data.Dao
 {
-    class Dao
+    public class Dao
     {
-
         public static AdoptionDao Adoption = new AdoptionDao();
+
+        public static UserDao User = new UserDao();
+
+        public static PetDao Pet = new PetDao();
     }
 }

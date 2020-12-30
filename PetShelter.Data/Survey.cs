@@ -12,15 +12,13 @@ namespace PetShelter.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class DataBaseLog
+    public partial class Survey
     {
-        public int DatabaseLogID { get; set; }
-        public Nullable<System.DateTime> PostTime { get; set; }
-        public string DatabaseUser { get; set; }
-        public string Event { get; set; }
-        public string Schema { get; set; }
-        public string Object { get; set; }
-        public string TSQL { get; set; }
-        public string XmlEvent { get; set; }
+        public int SuveyID { get; set; }
+        public int UserID { get; set; }
+        public string Result { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

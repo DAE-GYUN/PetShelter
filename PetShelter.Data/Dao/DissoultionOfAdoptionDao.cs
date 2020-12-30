@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetShelter.Data.Dao
 {
-    class DissoultionOfAdoptionDao : sing
+    class DissoultionOfAdoptionDao
     {
     }
 }

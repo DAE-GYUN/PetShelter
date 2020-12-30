@@ -17,6 +17,8 @@ namespace PetShelter.Data
         public int userID { get; set; }
         public int PetID { get; set; }
         public System.DateTime Date { get; set; }
+        public string Process { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
     
         public virtual Pet Pet { get; set; }
         public virtual User User { get; set; }

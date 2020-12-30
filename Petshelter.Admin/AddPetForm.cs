@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PetShelter.Data;
+using PetShelter.Data.Dao;
 
 namespace Petshelter.Admin
 {
@@ -49,7 +52,36 @@ namespace Petshelter.Admin
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("등록을 취소하시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Close();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            byte[] dstPicture = imageToByteArray(pictureEdit1.Image);
+            Pet pet = new Pet()
+            {
+                Picture = dstPicture,
+                Name = txeName.Text,
+                Age = int.Parse(txeAge.Text),
+                Familly = txeFamily.Text,
+                Gender = cbbeGender.Text,
+                HasVaccinated = checkVaccinated.Checked,
+                HasAnimalRegistrated = checkAnimalRegistrated.Checked,
+                HasNeutralized = checkNeutralized.Checked,
+                Species = txeSpecies.Text,
+                ETC = txeEtc.Text,
+                Weight = int.Parse(txeWeight.Text)
+            };
+
+            Dao.Pet.Insert(pet);
+        }
+
+        public byte[] imageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
         }
     }
 }
