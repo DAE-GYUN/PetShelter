@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PetShelterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DataBaseLog">
+          <Key>
+            <PropertyRef Name="DatabaseLogID" />
+          </Key>
+          <Property Name="DatabaseLogID" Type="int" Nullable="false" />
+          <Property Name="PostTime" Type="datetime" />
+          <Property Name="DatabaseUser" Type="nvarchar(max)" />
+          <Property Name="Event" Type="nvarchar(max)" />
+          <Property Name="Schema" Type="nvarchar(max)" />
+          <Property Name="Object" Type="nvarchar(max)" />
+          <Property Name="TSQL" Type="nvarchar(max)" />
+          <Property Name="XmlEvent" Type="xml" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorLogID" />
+          </Key>
+          <Property Name="ErrorLogID" Type="int" Nullable="false" />
+          <Property Name="ErrorTime" Type="datetime" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="ErrorNumber" Type="int" />
+          <Property Name="ErrorSeverity" Type="int" />
+          <Property Name="ErrorState" Type="int" />
+          <Property Name="ErrorProcedure" Type="nvarchar(max)" />
+          <Property Name="ErrorLine" Type="int" />
+          <Property Name="ErrorMessage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Adoption">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="PetID" />
+          </Key>
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="PetID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DissolutionOfAdoption">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="PetID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="PetID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <EntityType Name="Pet">
+          <Key>
+            <PropertyRef Name="PetID" />
+          </Key>
+          <Property Name="PetID" Type="int" Nullable="false" />
+          <Property Name="Familly" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image" Type="binary" MaxLength="8000" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Neutralized" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Unusual" Type="nvarchar(max)" />
+          <Property Name="EntryDate" Type="date" Nullable="false" />
+          <Property Name="Breed" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Disease" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="AnimalRegistrationNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="int" Nullable="false" />
+          <Property Name="PurchasingID" Type="int" Nullable="false" />
+          <Property Name="InvoiceDate" Type="date" Nullable="false" />
+          <Property Name="ReceiveMoney" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Purchasing">
+          <Key>
+            <PropertyRef Name="PurchasingID" />
+          </Key>
+          <Property Name="PurchasingID" Type="int" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="PetID" Type="int" Nullable="false" />
+          <Property Name="PurchasedDate" Type="date" Nullable="false" />
+          <Property Name="Responsibilitycharge" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Servey">
+          <Key>
+            <PropertyRef Name="ServeyID" />
+          </Key>
+          <Property Name="ServeyID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Result" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServeyChoices">
+          <Key>
+            <PropertyRef Name="ServeyQuestionID" />
+            <PropertyRef Name="NumberOfChoice" />
+          </Key>
+          <Property Name="ServeyQuestionID" Type="int" Nullable="false" />
+          <Property Name="NumberOfChoice" Type="int" Nullable="false" />
+          <Property Name="Content" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ServeyQuestion">
+          <Key>
+            <PropertyRef Name="ServeyQuestionID" />
+          </Key>
+          <Property Name="ServeyQuestionID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nchar" MaxLength="10" />
+          <Property Name="Type" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PhoneNumber" Type="int" Nullable="false" />
+          <Property Name="Job" Type="nvarchar" MaxLength="50" />
+          <Property Name="Salary" Type="int" />
+          <Property Name="HomeType" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_Adoption_Pet">
+          <End Role="Pet" Type="Self.Pet" Multiplicity="1" />
+          <End Role="Adoption" Type="Self.Adoption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pet">
+              <PropertyRef Name="PetID" />
+            </Principal>
+            <Dependent Role="Adoption">
+              <PropertyRef Name="PetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adoption_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Adoption" Type="Self.Adoption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Adoption">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DissolutionOfAdoption_Pet">
+          <End Role="Pet" Type="Self.Pet" Multiplicity="1" />
+          <End Role="DissolutionOfAdoption" Type="Self.DissolutionOfAdoption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pet">
+              <PropertyRef Name="PetID" />
+            </Principal>
+            <Dependent Role="DissolutionOfAdoption">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DissolutionOfAdoption_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="DissolutionOfAdoption" Type="Self.DissolutionOfAdoption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="DissolutionOfAdoption">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Purchasing">
+          <End Role="Purchasing" Type="Self.Purchasing" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchasing">
+              <PropertyRef Name="PurchasingID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="PurchasingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Servey_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Servey" Type="Self.Servey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Servey">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PetShelterModelStoreContainer">
+          <EntitySet Name="DataBaseLog" EntityType="Self.DataBaseLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Adoption" EntityType="Self.Adoption" Schema="Pet" store:Type="Tables" />
+          <EntitySet Name="DissolutionOfAdoption" EntityType="Self.DissolutionOfAdoption" Schema="Pet" store:Type="Tables" />
+          <EntitySet Name="Pet" EntityType="Self.Pet" Schema="Pet" store:Type="Tables" />
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="Purchasing" store:Type="Tables" />
+          <EntitySet Name="Purchasing" EntityType="Self.Purchasing" Schema="Purchasing" store:Type="Tables" />
+          <EntitySet Name="Servey" EntityType="Self.Servey" Schema="Survey" store:Type="Tables" />
+          <EntitySet Name="ServeyChoices" EntityType="Self.ServeyChoices" Schema="Survey" store:Type="Tables" />
+          <EntitySet Name="ServeyQuestion" EntityType="Self.ServeyQuestion" Schema="Survey" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="User" store:Type="Tables" />
+          <AssociationSet Name="FK_Adoption_Pet" Association="Self.FK_Adoption_Pet">
+            <End Role="Pet" EntitySet="Pet" />
+            <End Role="Adoption" EntitySet="Adoption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adoption_User" Association="Self.FK_Adoption_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Adoption" EntitySet="Adoption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DissolutionOfAdoption_Pet" Association="Self.FK_DissolutionOfAdoption_Pet">
+            <End Role="Pet" EntitySet="Pet" />
+            <End Role="DissolutionOfAdoption" EntitySet="DissolutionOfAdoption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DissolutionOfAdoption_User" Association="Self.FK_DissolutionOfAdoption_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="DissolutionOfAdoption" EntitySet="DissolutionOfAdoption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Purchasing" Association="Self.FK_Invoice_Purchasing">
+            <End Role="Purchasing" EntitySet="Purchasing" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Servey_User" Association="Self.FK_Servey_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Servey" EntitySet="Servey" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PetShelterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DataBaseLog">
+          <Key>
+            <PropertyRef Name="DatabaseLogID" />
+          </Key>
+          <Property Name="DatabaseLogID" Type="Int32" Nullable="false" />
+          <Property Name="PostTime" Type="DateTime" Precision="3" />
+          <Property Name="DatabaseUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Event" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Schema" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Object" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TSQL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlEvent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorLogID" />
+          </Key>
+          <Property Name="ErrorLogID" Type="Int32" Nullable="false" />
+          <Property Name="ErrorTime" Type="DateTime" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorNumber" Type="Int32" />
+          <Property Name="ErrorSeverity" Type="Int32" />
+          <Property Name="ErrorState" Type="Int32" />
+          <Property Name="ErrorProcedure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorLine" Type="Int32" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Adoption">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="PetID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <Property Name="PetID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Pet" Relationship="Self.FK_Adoption_Pet" FromRole="Adoption" ToRole="Pet" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Adoption_User" FromRole="Adoption" ToRole="User" />
+        </EntityType>
+        <EntityType Name="DissolutionOfAdoption">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="PetID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="PetID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Pet" Relationship="Self.FK_DissolutionOfAdoption_Pet" FromRole="DissolutionOfAdoption" ToRole="Pet" />
+          <NavigationProperty Name="User" Relationship="Self.FK_DissolutionOfAdoption_User" FromRole="DissolutionOfAdoption" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Pet">
+          <Key>
+            <PropertyRef Name="PetID" />
+          </Key>
+          <Property Name="PetID" Type="Int32" Nullable="false" />
+          <Property Name="Familly" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="8000" FixedLength="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Neutralized" Type="Boolean" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Unusual" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Breed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Disease" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="AnimalRegistrationNumber" Type="Int32" />
+          <NavigationProperty Name="Adoptions" Relationship="Self.FK_Adoption_Pet" FromRole="Pet" ToRole="Adoption" />
+          <NavigationProperty Name="DissolutionOfAdoptions" Relationship="Self.FK_DissolutionOfAdoption_Pet" FromRole="Pet" ToRole="DissolutionOfAdoption" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+          <Property Name="PurchasingID" Type="Int32" Nullable="false" />
+          <Property Name="InvoiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ReceiveMoney" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Purchasing" Relationship="Self.FK_Invoice_Purchasing" FromRole="Invoice" ToRole="Purchasing" />
+        </EntityType>
+        <EntityType Name="Purchasing">
+          <Key>
+            <PropertyRef Name="PurchasingID" />
+          </Key>
+          <Property Name="PurchasingID" Type="Int32" Nullable="false" />
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <Property Name="PetID" Type="Int32" Nullable="false" />
+          <Property Name="PurchasedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Responsibilitycharge" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoice_Purchasing" FromRole="Purchasing" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="Servey">
+          <Key>
+            <PropertyRef Name="ServeyID" />
+          </Key>
+          <Property Name="ServeyID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Result" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Servey_User" FromRole="Servey" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ServeyChoice">
+          <Key>
+            <PropertyRef Name="ServeyQuestionID" />
+            <PropertyRef Name="NumberOfChoice" />
+          </Key>
+          <Property Name="ServeyQuestionID" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfChoice" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ServeyQuestion">
+          <Key>
+            <PropertyRef Name="ServeyQuestionID" />
+          </Key>
+          <Property Name="ServeyQuestionID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+          <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Int32" />
+          <Property Name="HomeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adoptions" Relationship="Self.FK_Adoption_User" FromRole="User" ToRole="Adoption" />
+          <NavigationProperty Name="DissolutionOfAdoptions" Relationship="Self.FK_DissolutionOfAdoption_User" FromRole="User" ToRole="DissolutionOfAdoption" />
+          <NavigationProperty Name="Serveys" Relationship="Self.FK_Servey_User" FromRole="User" ToRole="Servey" />
+        </EntityType>
+        <Association Name="FK_Adoption_Pet">
+          <End Role="Pet" Type="Self.Pet" Multiplicity="1" />
+          <End Role="Adoption" Type="Self.Adoption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pet">
+              <PropertyRef Name="PetID" />
+            </Principal>
+            <Dependent Role="Adoption">
+              <PropertyRef Name="PetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adoption_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Adoption" Type="Self.Adoption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Adoption">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DissolutionOfAdoption_Pet">
+          <End Role="Pet" Type="Self.Pet" Multiplicity="1" />
+          <End Role="DissolutionOfAdoption" Type="Self.DissolutionOfAdoption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pet">
+              <PropertyRef Name="PetID" />
+            </Principal>
+            <Dependent Role="DissolutionOfAdoption">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DissolutionOfAdoption_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="DissolutionOfAdoption" Type="Self.DissolutionOfAdoption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="DissolutionOfAdoption">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Purchasing">
+          <End Role="Purchasing" Type="Self.Purchasing" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchasing">
+              <PropertyRef Name="PurchasingID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="PurchasingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Servey_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Servey" Type="Self.Servey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Servey">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PetShelterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DataBaseLogs" EntityType="Self.DataBaseLog" />
+          <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+          <EntitySet Name="Adoptions" EntityType="Self.Adoption" />
+          <EntitySet Name="DissolutionOfAdoptions" EntityType="Self.DissolutionOfAdoption" />
+          <EntitySet Name="Pets" EntityType="Self.Pet" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+          <EntitySet Name="Purchasings" EntityType="Self.Purchasing" />
+          <EntitySet Name="Serveys" EntityType="Self.Servey" />
+          <EntitySet Name="ServeyChoices" EntityType="Self.ServeyChoice" />
+          <EntitySet Name="ServeyQuestions" EntityType="Self.ServeyQuestion" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Adoption_Pet" Association="Self.FK_Adoption_Pet">
+            <End Role="Pet" EntitySet="Pets" />
+            <End Role="Adoption" EntitySet="Adoptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adoption_User" Association="Self.FK_Adoption_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Adoption" EntitySet="Adoptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DissolutionOfAdoption_Pet" Association="Self.FK_DissolutionOfAdoption_Pet">
+            <End Role="Pet" EntitySet="Pets" />
+            <End Role="DissolutionOfAdoption" EntitySet="DissolutionOfAdoptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DissolutionOfAdoption_User" Association="Self.FK_DissolutionOfAdoption_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DissolutionOfAdoption" EntitySet="DissolutionOfAdoptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Purchasing" Association="Self.FK_Invoice_Purchasing">
+            <End Role="Purchasing" EntitySet="Purchasings" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Servey_User" Association="Self.FK_Servey_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Servey" EntitySet="Serveys" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PetShelterModelStoreContainer" CdmEntityContainer="PetShelterEntities">
+          <EntitySetMapping Name="DataBaseLogs">
+            <EntityTypeMapping TypeName="PetShelterModel.DataBaseLog">
+              <MappingFragment StoreEntitySet="DataBaseLog">
+                <ScalarProperty Name="DatabaseLogID" ColumnName="DatabaseLogID" />
+                <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+                <ScalarProperty Name="DatabaseUser" ColumnName="DatabaseUser" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="Schema" ColumnName="Schema" />
+                <ScalarProperty Name="Object" ColumnName="Object" />
+                <ScalarProperty Name="TSQL" ColumnName="TSQL" />
+                <ScalarProperty Name="XmlEvent" ColumnName="XmlEvent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="PetShelterModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="ErrorLogID" ColumnName="ErrorLogID" />
+                <ScalarProperty Name="ErrorTime" ColumnName="ErrorTime" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ErrorNumber" ColumnName="ErrorNumber" />
+                <ScalarProperty Name="ErrorSeverity" ColumnName="ErrorSeverity" />
+                <ScalarProperty Name="ErrorState" ColumnName="ErrorState" />
+                <ScalarProperty Name="ErrorProcedure" ColumnName="ErrorProcedure" />
+                <ScalarProperty Name="ErrorLine" ColumnName="ErrorLine" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Adoptions">
+            <EntityTypeMapping TypeName="PetShelterModel.Adoption">
+              <MappingFragment StoreEntitySet="Adoption">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="PetID" ColumnName="PetID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DissolutionOfAdoptions">
+            <EntityTypeMapping TypeName="PetShelterModel.DissolutionOfAdoption">
+              <MappingFragment StoreEntitySet="DissolutionOfAdoption">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PetID" ColumnName="PetID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pets">
+            <EntityTypeMapping TypeName="PetShelterModel.Pet">
+              <MappingFragment StoreEntitySet="Pet">
+                <ScalarProperty Name="PetID" ColumnName="PetID" />
+                <ScalarProperty Name="Familly" ColumnName="Familly" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Neutralized" ColumnName="Neutralized" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Unusual" ColumnName="Unusual" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="Breed" ColumnName="Breed" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="AnimalRegistrationNumber" ColumnName="AnimalRegistrationNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="PetShelterModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="PurchasingID" ColumnName="PurchasingID" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="ReceiveMoney" ColumnName="ReceiveMoney" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchasings">
+            <EntityTypeMapping TypeName="PetShelterModel.Purchasing">
+              <MappingFragment StoreEntitySet="Purchasing">
+                <ScalarProperty Name="PurchasingID" ColumnName="PurchasingID" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="PetID" ColumnName="PetID" />
+                <ScalarProperty Name="PurchasedDate" ColumnName="PurchasedDate" />
+                <ScalarProperty Name="Responsibilitycharge" ColumnName="Responsibilitycharge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serveys">
+            <EntityTypeMapping TypeName="PetShelterModel.Servey">
+              <MappingFragment StoreEntitySet="Servey">
+                <ScalarProperty Name="ServeyID" ColumnName="ServeyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServeyChoices">
+            <EntityTypeMapping TypeName="PetShelterModel.ServeyChoice">
+              <MappingFragment StoreEntitySet="ServeyChoices">
+                <ScalarProperty Name="ServeyQuestionID" ColumnName="ServeyQuestionID" />
+                <ScalarProperty Name="NumberOfChoice" ColumnName="NumberOfChoice" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServeyQuestions">
+            <EntityTypeMapping TypeName="PetShelterModel.ServeyQuestion">
+              <MappingFragment StoreEntitySet="ServeyQuestion">
+                <ScalarProperty Name="ServeyQuestionID" ColumnName="ServeyQuestionID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PetShelterModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="HomeType" ColumnName="HomeType" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="없음" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

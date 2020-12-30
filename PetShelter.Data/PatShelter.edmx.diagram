@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ce3e9d0a3f36414ba6d24664ffd9ddc4" Name="Diagram1">
+        <EntityTypeShape EntityType="PetShelterModel.DataBaseLog" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.ErrorLog" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.Adoption" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.DissolutionOfAdoption" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.Pet" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.Invoice" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.Purchasing" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.Servey" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.ServeyChoice" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.ServeyQuestion" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetShelterModel.User" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="PetShelterModel.FK_Adoption_Pet" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShelterModel.FK_Adoption_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShelterModel.FK_DissolutionOfAdoption_Pet" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShelterModel.FK_DissolutionOfAdoption_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShelterModel.FK_Invoice_Purchasing" ManuallyRouted="false" />
+        <AssociationConnector Association="PetShelterModel.FK_Servey_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
