@@ -5,22 +5,24 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7b855bf54795419883480b94c01efce2" Name="Diagram1">
-        <EntityTypeShape EntityType="PetShelterModel.ErrorLog" Width="1.5" PointX="8.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.Adoption" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.DissolutionOfAdoption" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.Pet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.Invoice" Width="1.5" PointX="8" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.Purchasing" Width="1.5" PointX="5.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.Survey" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.SurveyChoice" Width="1.5" PointX="2.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.SurveyQuestion" Width="1.5" PointX="4.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetShelterModel.User" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
-        <AssociationConnector Association="PetShelterModel.FK_Adoption_Pet" ManuallyRouted="false" />
-        <AssociationConnector Association="PetShelterModel.FK_Adoption_User" ManuallyRouted="false" />
-        <AssociationConnector Association="PetShelterModel.FK_DissolutionOfAdoption_Pet" ManuallyRouted="false" />
-        <AssociationConnector Association="PetShelterModel.FK_DissolutionOfAdoption_User" ManuallyRouted="false" />
-        <AssociationConnector Association="PetShelterModel.FK_Invoice_Purchasing" ManuallyRouted="false" />
-        <AssociationConnector Association="PetShelterModel.FK_Survey_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PetShelterModel.Adoption" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="PetShelterModel.DissolutionOfAdoption" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="PetShelterModel.Invoice" Width="1.5" PointX="8.25" PointY="6.75" />
+        <EntityTypeShape EntityType="PetShelterModel.Purchasing" Width="1.5" PointX="6" PointY="6.375" />
+        <EntityTypeShape EntityType="PetShelterModel.Survey" Width="1.5" PointX="3" PointY="16.5" />
+        <EntityTypeShape EntityType="PetShelterModel.SurveyChoice" Width="1.5" PointX="8" PointY="1.5" />
+        <EntityTypeShape EntityType="PetShelterModel.SurveyQuestion" Width="1.5" PointX="5.75" PointY="1.5" />
+        <EntityTypeShape EntityType="PetShelterModel.User" Width="1.5" PointX="0.75" PointY="6" />
+        <AssociationConnector Association="PetShelterModel.FK_Adoption_User" />
+        <AssociationConnector Association="PetShelterModel.FK_DissolutionOfAdoption_User" />
+        <AssociationConnector Association="PetShelterModel.FK_Invoice_Purchasing" />
+        <AssociationConnector Association="PetShelterModel.FK_Purchasing_User" />
+        <AssociationConnector Association="PetShelterModel.FK_Survey_User1" />
+        <AssociationConnector Association="PetShelterModel.FK_SurveyChoices_SurveyQuestion" />
+        <EntityTypeShape EntityType="PetShelterModel.Pet" Width="1.5" PointX="8.375" PointY="10" />
+        <AssociationConnector Association="PetShelterModel.FK_Adoption_Pet" />
+        <AssociationConnector Association="PetShelterModel.FK_DissolutionOfAdoption_Pet" />
+        <AssociationConnector Association="PetShelterModel.FK_Purchasing_Pet" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

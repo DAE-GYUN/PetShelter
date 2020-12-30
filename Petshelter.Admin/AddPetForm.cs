@@ -74,7 +74,12 @@ namespace Petshelter.Admin
                 Weight = int.Parse(txeWeight.Text)
             };
 
-            Dao.Pet.Insert(pet);
+            if (MessageBox.Show("저장하시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Dao.Pet.Insert(pet);
+                Close();
+            }
+
         }
 
         public byte[] imageToByteArray(Image imageIn)
