@@ -27,12 +27,13 @@ namespace PetShelter.Data
     
         public virtual DbSet<Adoption> Adoptions { get; set; }
         public virtual DbSet<DissolutionOfAdoption> DissolutionOfAdoptions { get; set; }
+        public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
+        public virtual DbSet<Pet> Pets { get; set; }
         public virtual DbSet<Purchasing> Purchasings { get; set; }
         public virtual DbSet<Survey> Surveys { get; set; }
         public virtual DbSet<SurveyChoice> SurveyChoices { get; set; }
         public virtual DbSet<SurveyQuestion> SurveyQuestions { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Pet> Pets { get; set; }
     }
 }

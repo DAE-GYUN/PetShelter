@@ -12,13 +12,16 @@ namespace PetShelter.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class SurveyChoice
+    public partial class ErrorLog
     {
-        public int SuveyQuestionID { get; set; }
-        public int NumberOfChoice { get; set; }
-        public string Content { get; set; }
-        public Nullable<System.DateTime> ModifiedDate { get; set; }
-    
-        public virtual SurveyQuestion SurveyQuestion { get; set; }
+        public int ErrorLogID { get; set; }
+        public Nullable<System.DateTime> ErrorTime { get; set; }
+        public string UserName { get; set; }
+        public Nullable<int> ErrorNumber { get; set; }
+        public Nullable<int> ErrorSeverity { get; set; }
+        public Nullable<int> ErrorState { get; set; }
+        public string ErrorProcedure { get; set; }
+        public Nullable<int> ErrorLine { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }

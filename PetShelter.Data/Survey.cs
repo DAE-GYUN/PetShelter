@@ -17,7 +17,7 @@ namespace PetShelter.Data
         public int SuveyID { get; set; }
         public int UserID { get; set; }
         public string Result { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
     
         public virtual User User { get; set; }
     }

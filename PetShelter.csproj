@@ -69,12 +69,6 @@
     <Compile Include="Main\UserAdoptionProcedureStep.Designer.cs">
       <DependentUpon>UserAdoptionProcedureStep.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailForms\CatsImformationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetailForms\CatsImformationForm.Designer.cs">
-      <DependentUpon>CatsImformationForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DetailForms\DogsImformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,9 +95,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DetailForms\CatsImformationForm.resx">
-      <DependentUpon>CatsImformationForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DetailForms\DogsImformationForm.resx">
       <DependentUpon>DogsImformationForm.cs</DependentUpon>
     </EmbeddedResource>

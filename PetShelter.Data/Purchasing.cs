@@ -25,11 +25,11 @@ namespace PetShelter.Data
         public int PetID { get; set; }
         public System.DateTime PurchasedDate { get; set; }
         public int Responsibilitycharge { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
-        public virtual User User { get; set; }
         public virtual Pet Pet { get; set; }
+        public virtual User User { get; set; }
     }
 }

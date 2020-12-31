@@ -73,6 +73,9 @@
     <Compile Include="EFLibrary\QuadKeyDao.cs" />
     <Compile Include="EFLibrary\SingleKeyDao.cs" />
     <Compile Include="EFLibrary\TripleKeyDao.cs" />
+    <Compile Include="ErrorLog.cs">
+      <DependentUpon>PetShelter.tt</DependentUpon>
+    </Compile>
     <Compile Include="Invoice.cs">
       <DependentUpon>PetShelter.tt</DependentUpon>
     </Compile>

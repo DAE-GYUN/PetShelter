@@ -46,10 +46,5 @@ namespace PetShelter
         {
             ShowChild(new DogsImformationForm());
         }
-
-        private void accordionControlElement6_Click(object sender, EventArgs e)
-        {
-            ShowChild(new CatsImformationForm());
-        }
     }
 }
