@@ -500,7 +500,6 @@
           <Property Name="HasVaccinated" Type="Boolean" Nullable="false" />
           <Property Name="Weight" Type="Int32" Nullable="false" />
           <Property Name="HasAnimalRegistrated" Type="Boolean" Nullable="false" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Adoptions" Relationship="PetShelterModel.FK_Adoption_Pet" FromRole="Pet" ToRole="Adoption" />
           <NavigationProperty Name="DissolutionOfAdoptions" Relationship="PetShelterModel.FK_DissolutionOfAdoption_Pet" FromRole="Pet" ToRole="DissolutionOfAdoption" />
           <NavigationProperty Name="Purchasings" Relationship="PetShelterModel.FK_Purchasing_Pet" FromRole="Pet" ToRole="Purchasing" />
@@ -640,7 +639,6 @@
           <EntitySetMapping Name="Pets">
             <EntityTypeMapping TypeName="PetShelterModel.Pet">
               <MappingFragment StoreEntitySet="Pet">
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="HasAnimalRegistrated" ColumnName="HasAnimalRegistrated" />
                 <ScalarProperty Name="Weight" ColumnName="Weight" />
                 <ScalarProperty Name="HasVaccinated" ColumnName="HasVaccinated" />

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EFLibrary;
+using PetShelter.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +18,9 @@ namespace PetShelter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DbContextCreator.Context = () => new PetShelterEntities();
+
             Application.Run(new MainForm());
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShelter.Data.Dao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,8 @@ namespace PetShelter
 
             if (DesignMode)
                 return;
+
+            petBindingSource.DataSource = Dao.Pet.GetAll();
         }
 
     }

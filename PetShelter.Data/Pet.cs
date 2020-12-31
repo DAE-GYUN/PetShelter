@@ -34,7 +34,6 @@ namespace PetShelter.Data
         public bool HasVaccinated { get; set; }
         public int Weight { get; set; }
         public bool HasAnimalRegistrated { get; set; }
-        public Nullable<System.DateTime> ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Adoption> Adoptions { get; set; }
