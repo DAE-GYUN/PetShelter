@@ -16,5 +16,18 @@ namespace PetShelter.Data.Dao
         {
             throw new NotImplementedException();
         }
+
+        public static object GetPetList(string family)
+        {
+            using (var context = new PetShelterEntities())
+            {
+                var query = from x in context.Pets
+                            where x.Familly == family
+                            select x;
+
+                return query.ToList();
+            }
+
+        }
     }
 }
