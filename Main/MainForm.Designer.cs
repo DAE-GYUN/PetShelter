@@ -40,9 +40,9 @@ namespace PetShelter
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acDogList = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCatList = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acEtcList = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -118,31 +118,32 @@ namespace PetShelter
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement5,
-            this.accordionControlElement6,
-            this.accordionControlElement7});
+            this.acDogList,
+            this.acCatList,
+            this.acEtcList});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "펫 정보";
             // 
-            // accordionControlElement5
+            // acDogList
             // 
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "강아지";
-            this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
+            this.acDogList.Name = "acDogList";
+            this.acDogList.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acDogList.Text = "강아지";
+            this.acDogList.Click += new System.EventHandler(this.acDogList_Click);
             // 
-            // accordionControlElement6
+            // acCatList
             // 
-            this.accordionControlElement6.Name = "accordionControlElement6";
-            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement6.Text = "고양이";
+            this.acCatList.Name = "acCatList";
+            this.acCatList.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCatList.Text = "고양이";
+            this.acCatList.Click += new System.EventHandler(this.acCatList_Click);
             // 
-            // accordionControlElement7
+            // acEtcList
             // 
-            this.accordionControlElement7.Name = "accordionControlElement7";
-            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement7.Text = "기타";
+            this.acEtcList.Name = "acEtcList";
+            this.acEtcList.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acEtcList.Text = "기타";
             // 
             // accordionControl1
             // 
@@ -222,9 +223,9 @@ namespace PetShelter
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acDogList;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCatList;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acEtcList;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
         private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
