@@ -10,11 +10,7 @@ namespace PetShelter.Data.Dao
 {
     public partial class UserDao : SingleKeyDao<User, int>
     {
-        protected override Expression<Func<User, int>> KeySelector => throw new NotImplementedException();
+        protected override Expression<Func<User, int>> KeySelector => x => x.UserID;
 
-        protected override Expression<Func<User, bool>> IsKey(int key)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

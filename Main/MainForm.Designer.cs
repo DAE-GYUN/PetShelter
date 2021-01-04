@@ -144,6 +144,7 @@ namespace PetShelter
             this.acEtcList.Name = "acEtcList";
             this.acEtcList.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.acEtcList.Text = "기타";
+            this.acEtcList.Click += new System.EventHandler(this.acEtcList_Click);
             // 
             // accordionControl1
             // 

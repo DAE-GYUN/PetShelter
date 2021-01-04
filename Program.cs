@@ -19,8 +19,6 @@ namespace PetShelter
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DbContextCreator.Context = () => new PetShelterEntities();
-
             Application.Run(new MainForm());
         }
     }

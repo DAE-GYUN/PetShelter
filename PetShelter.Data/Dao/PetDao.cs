@@ -10,16 +10,16 @@ namespace PetShelter.Data.Dao
 {
     public partial class PetDao : SingleKeyDao<Pet, int>
     {
-        protected override Expression<Func<Pet, int>> KeySelector => throw new NotImplementedException();
+        protected override Expression<Func<Pet, int>> KeySelector => x => x.PetID;
 
-        protected override Expression<Func<Pet, bool>> IsKey(int key)
-        {
-            throw new NotImplementedException();
-        }
+        //protected override Expression<Func<Pet, bool>> IsKey(int key)
+        //{
+        //    return x => x.PetID == key;
+        //}
 
-        public static object GetPetList(string family)
+        public List<Pet> GetPetList(string family)
         {
-            using (var context = new PetShelterEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Pets
                             where x.Familly == family
