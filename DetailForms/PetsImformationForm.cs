@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PetShelter
 {
-    public partial class DogsImformationForm : Form
+    public partial class PetsImformationForm : Form
     {
-        public DogsImformationForm()
+        public PetsImformationForm()
         {
             InitializeComponent();
         }

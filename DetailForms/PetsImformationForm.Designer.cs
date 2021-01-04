@@ -1,7 +1,7 @@
 ﻿
 namespace PetShelter
 {
-    partial class DogsImformationForm
+    partial class PetsImformationForm
     {
         /// <summary>
         /// Required designer variable.

@@ -70,11 +70,11 @@
     <Compile Include="Main\UserAdoptionProcedureStep.Designer.cs">
       <DependentUpon>UserAdoptionProcedureStep.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailForms\DogsImformationForm.cs">
+    <Compile Include="DetailForms\PetsImformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetailForms\DogsImformationForm.Designer.cs">
-      <DependentUpon>DogsImformationForm.cs</DependentUpon>
+    <Compile Include="DetailForms\PetsImformationForm.Designer.cs">
+      <DependentUpon>PetsImformationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
@@ -96,8 +96,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DetailForms\DogsImformationForm.resx">
-      <DependentUpon>DogsImformationForm.cs</DependentUpon>
+    <EmbeddedResource Include="DetailForms\PetsImformationForm.resx">
+      <DependentUpon>PetsImformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\DissoultionOfAdoptionRequestForm.resx">
       <DependentUpon>DissoultionOfAdoptionRequestForm.cs</DependentUpon>

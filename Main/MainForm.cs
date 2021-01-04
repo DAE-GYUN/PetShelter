@@ -44,7 +44,7 @@ namespace PetShelter
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
         {
-            ShowChild(new DogsImformationForm());
+            ShowChild(new PetsImformationForm());
         }
     }
 }
