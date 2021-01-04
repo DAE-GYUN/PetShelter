@@ -35,19 +35,17 @@ namespace PetShelter
 
             if(_family == "Dog")
             {
-                petBindingSource.DataSource = PetDao.GetPetList("Dog");
+                petBindingSource.DataSource = Dao.Pet.GetPetList("Dog");
             }
             else if(_family == "Cat")
             {
-                petBindingSource.DataSource = PetDao.GetPetList("Cat");
+                petBindingSource.DataSource = Dao.Pet.GetPetList("Cat");
             }
             else if(_family == "Etc")
-                petBindingSource.DataSource = PetDao.GetPetList("Etc");
+                petBindingSource.DataSource = Dao.Pet.GetPetList("Etc");
 
 
         }
-
-        
 
     }
 }

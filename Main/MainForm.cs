@@ -23,33 +23,39 @@ namespace PetShelter
 
             if (DesignMode)
                 return;
-            
-            
+       
         }
 
         private void ShowChild(Form form)
         {
-            var childform = MdiChildren.FirstOrDefault(x => x.GetType() == form.GetType());
+            form.MdiParent = this;
+            form.Show();
+            //var childform = MdiChildren.FirstOrDefault(x => x.GetType() == form.GetType());
 
-            if (childform == null)
-            {
-                form.MdiParent = this;
-                form.Show();
-            }
-            else
-            {
-                childform.Focus();
-            }
+            //if (childform == null)
+            //{
+            //    form.MdiParent = this;
+            //    form.Show();
+            //}
+            //else
+            //{
+            //    childform.Focus();
+            //}
         }
 
         private void acDogList_Click(object sender, EventArgs e)
         {
-            ShowChild(new PetsImformationForm());
+            ShowChild(new PetsImformationForm("Dog"));
         }
 
         private void acCatList_Click(object sender, EventArgs e)
         {
-            ShowChild(new PetsImformationForm());
+            ShowChild(new PetsImformationForm("Cat"));
+        }
+
+        private void acEtcList_Click(object sender, EventArgs e)
+        {
+            ShowChild(new PetsImformationForm("Etc"));
         }
     }
 }

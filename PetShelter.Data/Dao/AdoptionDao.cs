@@ -8,13 +8,7 @@ using System.Threading.Tasks;
 
 namespace PetShelter.Data.Dao
 {
-    public partial class AdoptionDao : SingleKeyDao<Adoption, int>
+    public partial class AdoptionDao : DualKeyDao<Adoption, int, int>
     {
-        protected override Expression<Func<Adoption, int>> KeySelector => throw new NotImplementedException();
-
-        protected override Expression<Func<Adoption, bool>> IsKey(int key)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

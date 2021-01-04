@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -11,15 +12,11 @@ namespace EFLibrary
     {
         public T GetByPK(K key)
         {
-            using (var context = DbContextCreator.Context())
+            using (DbContext context = DbContextCreator.Create())
             {
-                return context.Set<T>()
-                    .Where(IsKey(key))
-                    .FirstOrDefault();
+                return context.Set<T>().Find(key);
             }
         }
-
-        protected abstract Expression<Func<T, bool>> IsKey(K key);
 
         public void DeleteByPK(K key)
         {
@@ -31,9 +28,9 @@ namespace EFLibrary
 
         public K GetMaxKey()
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
-                IQueryable<K> query = context.Set<T>()
+                var query = context.Set<T>()
                     .OrderByDescending(KeySelector)
                     .Select(KeySelector);
 
