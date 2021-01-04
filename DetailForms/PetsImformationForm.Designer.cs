@@ -112,7 +112,7 @@ namespace PetShelter
             this.gcDogImformation.Dock = System.Windows.Forms.DockStyle.Left;
             this.gcDogImformation.Location = new System.Drawing.Point(0, 0);
             this.gcDogImformation.Name = "gcDogImformation";
-            this.gcDogImformation.Size = new System.Drawing.Size(465, 450);
+            this.gcDogImformation.Size = new System.Drawing.Size(465, 462);
             this.gcDogImformation.TabIndex = 0;
             this.gcDogImformation.Text = "강아지 정보";
             // 
@@ -123,7 +123,7 @@ namespace PetShelter
             this.gridControl1.Location = new System.Drawing.Point(2, 28);
             this.gridControl1.MainView = this.tileView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(440, 420);
+            this.gridControl1.Size = new System.Drawing.Size(440, 432);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -199,16 +199,16 @@ namespace PetShelter
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.vScrollBar1.Location = new System.Drawing.Point(442, 28);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(21, 420);
+            this.vScrollBar1.Size = new System.Drawing.Size(21, 432);
             this.vScrollBar1.TabIndex = 0;
             // 
-            // DogsImformationForm
+            // PetsImformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(935, 462);
             this.Controls.Add(this.gcDogImformation);
-            this.Name = "DogsImformationForm";
+            this.Name = "PetsImformationForm";
             this.Text = "DogsForm";
             ((System.ComponentModel.ISupportInitialize)(this.gcDogImformation)).EndInit();
             this.gcDogImformation.ResumeLayout(false);

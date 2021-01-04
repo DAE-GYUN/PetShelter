@@ -42,7 +42,12 @@ namespace PetShelter
             }
         }
 
-        private void accordionControlElement5_Click(object sender, EventArgs e)
+        private void acDogList_Click(object sender, EventArgs e)
+        {
+            ShowChild(new PetsImformationForm());
+        }
+
+        private void acCatList_Click(object sender, EventArgs e)
         {
             ShowChild(new PetsImformationForm());
         }
