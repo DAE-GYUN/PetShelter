@@ -43,88 +43,95 @@ namespace PetShelter
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement8 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement9 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement10 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            this.gcDogImformation = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.colPicture = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colAge = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colGender = new DevExpress.XtraGrid.Columns.TileViewColumn();
-            this.colName = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colSpecies = new DevExpress.XtraGrid.Columns.TileViewColumn();
-            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.gcPetInformation = new DevExpress.XtraEditors.GroupControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.petBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.gcDogImformation)).BeginInit();
-            this.gcDogImformation.SuspendLayout();
+            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPetInformation)).BeginInit();
+            this.gcPetInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // gcDogImformation
+            // colPicture
             // 
-            this.gcDogImformation.Controls.Add(this.gridControl1);
-            this.gcDogImformation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gcDogImformation.Location = new System.Drawing.Point(0, 0);
-            this.gcDogImformation.Name = "gcDogImformation";
-            this.gcDogImformation.Size = new System.Drawing.Size(465, 463);
-            this.gcDogImformation.TabIndex = 0;
-            this.gcDogImformation.Text = "강아지 정보";
+            this.colPicture.FieldName = "Picture";
+            this.colPicture.MinWidth = 31;
+            this.colPicture.Name = "colPicture";
+            this.colPicture.Visible = true;
+            this.colPicture.VisibleIndex = 0;
+            this.colPicture.Width = 117;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.MinWidth = 31;
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 3;
+            this.colName.Width = 117;
+            // 
+            // colAge
+            // 
+            this.colAge.FieldName = "Age";
+            this.colAge.MinWidth = 31;
+            this.colAge.Name = "colAge";
+            this.colAge.Visible = true;
+            this.colAge.VisibleIndex = 1;
+            this.colAge.Width = 117;
+            // 
+            // colGender
+            // 
+            this.colGender.FieldName = "Gender";
+            this.colGender.MinWidth = 31;
+            this.colGender.Name = "colGender";
+            this.colGender.Visible = true;
+            this.colGender.VisibleIndex = 2;
+            this.colGender.Width = 117;
+            // 
+            // colSpecies
+            // 
+            this.colSpecies.FieldName = "Species";
+            this.colSpecies.MinWidth = 31;
+            this.colSpecies.Name = "colSpecies";
+            this.colSpecies.Visible = true;
+            this.colSpecies.VisibleIndex = 4;
+            this.colSpecies.Width = 117;
+            // 
+            // gcPetInformation
+            // 
+            this.gcPetInformation.Controls.Add(this.gridControl1);
+            this.gcPetInformation.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gcPetInformation.Location = new System.Drawing.Point(0, 0);
+            this.gcPetInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcPetInformation.Name = "gcPetInformation";
+            this.gcPetInformation.Size = new System.Drawing.Size(581, 463);
+            this.gcPetInformation.TabIndex = 0;
+            this.gcPetInformation.Text = "PetInformation";
             // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.petBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl1.Location = new System.Drawing.Point(2, 28);
             this.gridControl1.MainView = this.tileView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(461, 433);
+            this.gridControl1.Size = new System.Drawing.Size(577, 433);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
             // 
-            // colPicture
+            // petBindingSource
             // 
-            this.colPicture.FieldName = "Picture";
-            this.colPicture.MinWidth = 25;
-            this.colPicture.Name = "colPicture";
-            this.colPicture.Visible = true;
-            this.colPicture.VisibleIndex = 0;
-            this.colPicture.Width = 94;
-            // 
-            // colAge
-            // 
-            this.colAge.FieldName = "Age";
-            this.colAge.MinWidth = 25;
-            this.colAge.Name = "colAge";
-            this.colAge.Visible = true;
-            this.colAge.VisibleIndex = 1;
-            this.colAge.Width = 94;
-            // 
-            // colGender
-            // 
-            this.colGender.FieldName = "Gender";
-            this.colGender.MinWidth = 25;
-            this.colGender.Name = "colGender";
-            this.colGender.Visible = true;
-            this.colGender.VisibleIndex = 2;
-            this.colGender.Width = 94;
-            // 
-            // colName
-            // 
-            this.colName.FieldName = "Name";
-            this.colName.MinWidth = 25;
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 3;
-            this.colName.Width = 94;
-            // 
-            // colSpecies
-            // 
-            this.colSpecies.FieldName = "Species";
-            this.colSpecies.MinWidth = 25;
-            this.colSpecies.Name = "colSpecies";
-            this.colSpecies.Visible = true;
-            this.colSpecies.VisibleIndex = 4;
-            this.colSpecies.Width = 94;
+            this.petBindingSource.DataSource = typeof(PetShelter.Data.Pet);
             // 
             // tileView1
             // 
@@ -134,6 +141,7 @@ namespace PetShelter
             this.colGender,
             this.colName,
             this.colSpecies});
+            this.tileView1.DetailHeight = 437;
             this.tileView1.GridControl = this.gridControl1;
             this.tileView1.Name = "tileView1";
             this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(416, 200);
@@ -188,30 +196,26 @@ namespace PetShelter
             this.tileView1.TileTemplate.Add(tileViewItemElement9);
             this.tileView1.TileTemplate.Add(tileViewItemElement10);
             // 
-            // petBindingSource
-            // 
-            this.petBindingSource.DataSource = typeof(PetShelter.Data.Pet);
-            // 
             // PetsImformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 463);
-            this.Controls.Add(this.gcDogImformation);
+            this.Controls.Add(this.gcPetInformation);
             this.Name = "PetsImformationForm";
             this.Text = "DogsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.gcDogImformation)).EndInit();
-            this.gcDogImformation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcPetInformation)).EndInit();
+            this.gcPetInformation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.GroupControl gcDogImformation;
+        private DevExpress.XtraEditors.GroupControl gcPetInformation;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         private DevExpress.XtraGrid.Columns.TileViewColumn colPicture;
