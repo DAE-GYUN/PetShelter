@@ -36,6 +36,9 @@ namespace Petshelter.Admin
             this.btnCat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnEtc = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnPet = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnUser = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +47,8 @@ namespace Petshelter.Admin
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement1});
+            this.accordionControlElement1,
+            this.accordionControlElement2});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.Size = new System.Drawing.Size(260, 710);
@@ -58,7 +62,6 @@ namespace Petshelter.Admin
             this.btnDog,
             this.btnCat,
             this.btnEtc});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "등록";
             // 
@@ -87,6 +90,28 @@ namespace Petshelter.Admin
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.btnPet,
+            this.btnUser});
+            this.accordionControlElement2.Expanded = true;
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Text = "관리";
+            // 
+            // btnPet
+            // 
+            this.btnPet.Name = "btnPet";
+            this.btnPet.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnPet.Text = "반려동물 관리";
+            this.btnPet.Click += new System.EventHandler(this.btnPet_Click);
+            // 
+            // btnUser
+            // 
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnUser.Text = "회원 관리";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -111,5 +136,8 @@ namespace Petshelter.Admin
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnCat;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnEtc;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnPet;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnUser;
     }
 }
