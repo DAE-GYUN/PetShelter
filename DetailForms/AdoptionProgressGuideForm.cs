@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PetShelter
+namespace PetShelter.DetailForms
 {
-    public partial class AdoptionStepForm : Form
+    public partial class AdoptionProgressGuideForm : Form
     {
-        public AdoptionStepForm()
+        public AdoptionProgressGuideForm()
         {
             InitializeComponent();
         }

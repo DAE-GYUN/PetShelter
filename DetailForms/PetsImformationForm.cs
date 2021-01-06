@@ -44,5 +44,10 @@ namespace PetShelter
             //    petBindingSource.DataSource = Dao.Pet.GetPetList("Etc");
             petBindingSource.DataSource = Dao.Pet.GetPetList(_family);
         }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

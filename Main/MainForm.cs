@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShelter.DetailForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,22 +45,37 @@ namespace PetShelter
         private void acDogList_Click(object sender, EventArgs e)
         {
             PetsImformationForm dogsForm = new PetsImformationForm("Dog");
-            dogsForm.Text = "Dogs";
+            dogsForm.Text = "강아지";
             ShowChild(dogsForm);
         }
 
         private void acCatList_Click(object sender, EventArgs e)
         {
             PetsImformationForm catsForm = new PetsImformationForm("Cat");
-            catsForm.Text = "Cats";
+            catsForm.Text = "고양이";
             ShowChild(catsForm);
         }
 
         private void acEtcList_Click(object sender, EventArgs e)
         {
             PetsImformationForm etcForm = new PetsImformationForm("Etc");
-            etcForm.Text = "Etc";
+            etcForm.Text = "기타종";
             ShowChild(etcForm);
+        }
+
+        private void accordionControlElement8_Click(object sender, EventArgs e)
+        {
+            AdoptionProgressGuideForm guideForm = new AdoptionProgressGuideForm();
+            guideForm.Text = "입양 절차 안내";
+            ShowChild(guideForm);
+        }
+
+        private void accordionControlElement13_Click(object sender, EventArgs e)
+        {
+            DissoultionOfAdoptionRequestForm dissoultionOfAdoptionRequest = new DissoultionOfAdoptionRequestForm();
+
+            dissoultionOfAdoptionRequest.Text = "파양 신청서 작성";
+            ShowChild(dissoultionOfAdoptionRequest);
         }
     }
 }
