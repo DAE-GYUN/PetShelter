@@ -53,5 +53,12 @@ namespace Petshelter.Admin
             addPetForm.Text = "Add Etc";
             ShowChild(addPetForm);
         }
+
+        private void btnPet_Click(object sender, EventArgs e)
+        {
+            PetManagementForm petManagementForm = new PetManagementForm();
+            petManagementForm.Text = "Pet";
+            ShowChild(petManagementForm);
+        }
     }
 }
