@@ -27,7 +27,6 @@ namespace PetShelter.Data
     
         public virtual DbSet<Adoption> Adoptions { get; set; }
         public virtual DbSet<DissolutionOfAdoption> DissolutionOfAdoptions { get; set; }
-        public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Pet> Pets { get; set; }
         public virtual DbSet<Purchasing> Purchasings { get; set; }

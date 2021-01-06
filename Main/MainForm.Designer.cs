@@ -100,6 +100,7 @@ namespace PetShelter
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement8,
             this.accordionControlElement9});
+            this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "입양 절차 ";
             // 
@@ -155,8 +156,9 @@ namespace PetShelter
             this.accordionControlElement3,
             this.accordionControlElement4});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(260, 450);
+            this.accordionControl1.Size = new System.Drawing.Size(325, 450);
             this.accordionControl1.TabIndex = 0;
             this.accordionControl1.Text = "accordionControl1";
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
