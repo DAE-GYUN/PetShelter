@@ -67,11 +67,11 @@ namespace Petshelter.Admin
                 Familly = txeFamily.Text,
                 Gender = cbbeGender.Text,
                 HasVaccinated = checkVaccinated.Checked,
-                HasAnimalRegistrated = checkAnimalRegistrated.Checked,
                 HasNeutralized = checkNeutralized.Checked,
                 Species = txeSpecies.Text,
                 ETC = txeEtc.Text,
-                Weight = int.Parse(txeWeight.Text)
+                Weight = int.Parse(txeWeight.Text),
+                Size = cbbeSize.Text
             };
 
             if (MessageBox.Show("저장하시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
