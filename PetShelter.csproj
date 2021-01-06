@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -51,7 +52,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,11 +67,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main\UserAdoptionProcedureStep.cs">
+    <Compile Include="DetailForms\AdoptionProgressGuideForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\UserAdoptionProcedureStep.Designer.cs">
-      <DependentUpon>UserAdoptionProcedureStep.cs</DependentUpon>
+    <Compile Include="DetailForms\AdoptionProgressGuideForm.Designer.cs">
+      <DependentUpon>AdoptionProgressGuideForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DetailForms\PetsImformationForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DetailForms\AdoptionProgressGuideForm.resx">
+      <DependentUpon>AdoptionProgressGuideForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailForms\PetsImformationForm.resx">
       <DependentUpon>PetsImformationForm.cs</DependentUpon>
     </EmbeddedResource>
