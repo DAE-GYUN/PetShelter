@@ -45,7 +45,7 @@ namespace PetShelter
         private void acDogList_Click(object sender, EventArgs e)
         {
             PetsImformationForm dogsForm = new PetsImformationForm("Dog");
-            dogsForm.Text = "DogsForm";
+            dogsForm.Text = "강아지";
             ShowChild(dogsForm);
         }
 
