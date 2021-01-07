@@ -1,4 +1,6 @@
-﻿using PetShelter.Data.Dao;
+﻿using DevExpress.XtraGrid.Views.Tile;
+using PetShelter.Data;
+using PetShelter.Data.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +31,24 @@ namespace Petshelter.Admin
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void tileView2_ItemDoubleClick(object sender, TileViewItemClickEventArgs e)
+        {
+            TileView view = e.Item.View;
+
+            Pet pet = view.GetFocusedRow() as Pet;
+
+            if (pet == null)
+                return;
+
+            MessageBox.Show(pet.PetID.ToString());
+
+            int petId = pet.PetID;
+
+            ChangingPetInformationForm changingPetInformationForm = new ChangingPetInformationForm(petId);
+            changingPetInformationForm.Show();
         }
     }
 }

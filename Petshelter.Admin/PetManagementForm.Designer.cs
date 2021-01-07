@@ -1129,6 +1129,7 @@ namespace Petshelter.Admin
             this.tileView2.TileTemplate.Add(tileViewItemElement12);
             this.tileView2.TileTemplate.Add(tileViewItemElement13);
             this.tileView2.TileTemplate.Add(tileViewItemElement14);
+            this.tileView2.ItemDoubleClick += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView2_ItemDoubleClick);
             // 
             // tileView1
             // 
