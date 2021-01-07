@@ -23,31 +23,43 @@ namespace Petshelter.Admin
         {
             _petId = petID;
         }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
             if (DesignMode)
                 return;
-            Pet pet = Dao.Pet.GetByPK(_petId);
 
-            pictureEdit1.Image = ByteArrayToImage(pet.Picture);
-            txeName.Text = pet.Name;
-            txeAge.Text = pet.Age.ToString();
-            txeFamily.Text = pet.Familly;
-            cbbeGender.Text = pet.Gender;
-            if(pet.HasVaccinated==true)
-            {
-                checkVaccinated.CheckState = CheckState.Checked;
-            }
-            if(pet.HasNeutralized==true)
-            {
-                checkNeutralized.CheckState = CheckState.Checked;
-            }
-            txeSpecies.Text = pet.Species;
-            txeEtc.Text = pet.ETC;
-            txeWeight.Text = pet.Weight.ToString();
-            cbbeSize.Text = pet.Size;
+            //if (_petId == null)
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    Pet pet = Dao.Pet.GetByPK(_petId);
+            //    //if(pet.Picture != null)
+            //    //{
+            //    //    pictureEdit1.Image = ByteArrayToImage(pet.Picture);
+            //    //}
+
+            //    txeName.Text = pet.Name;
+            //    txeAge.Text = pet.Age.ToString();
+            //    txeFamily.Text = pet.Familly;
+            //    cbbeGender.Text = pet.Gender;
+            //    if (pet.HasVaccinated == true)
+            //    {
+            //        checkVaccinated.CheckState = CheckState.Checked;
+            //    }
+            //    if (pet.HasNeutralized == true)
+            //    {
+            //        checkNeutralized.CheckState = CheckState.Checked;
+            //    }
+            //    txeSpecies.Text = pet.Species;
+            //    txeEtc.Text = pet.ETC;
+            //    txeWeight.Text = pet.Weight.ToString();
+            //    cbbeSize.Text = pet.Size;
+            //}
         }
 
         public int _petId { get; set; }
@@ -77,7 +89,7 @@ namespace Petshelter.Admin
 
             if (MessageBox.Show("저장하시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Dao.Pet.Insert(pet);
+                //Dao.Pet.Insert(pet);
                 Close();
             }
 
