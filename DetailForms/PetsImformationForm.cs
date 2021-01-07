@@ -1,4 +1,6 @@
-﻿using PetShelter.Data.Dao;
+﻿using DevExpress.XtraGrid.Views.Tile;
+using PetShelter.Data;
+using PetShelter.Data.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,9 +47,19 @@ namespace PetShelter
             petBindingSource.DataSource = Dao.Pet.GetPetList(_family);
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
+        private void tileView1_ItemDoubleClick(object sender, TileViewItemClickEventArgs e)
         {
+            TileView view = e.Item.View;
 
+            Pet pet = view.GetFocusedRow() as Pet;
+            // as :  캐스팅 하는건데 대신에 얘가 값이 안맞으면 null을 반환해줘 맞으면 캐스팅 해줘 대신에 값타입은 안돼용
+            if (pet == null)
+                return;
+
+            pictureEdit1.Image = pet.Picture;
+            
+            
         }
+        
     }
 }
