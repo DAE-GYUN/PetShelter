@@ -59,6 +59,7 @@ namespace PetShelter
                 return;
 
 
+
             // 클릭히먄 옆에 디테일에 데이터 이동
             pictureEdit1.Image = ByteArrayToImage(pet.Picture);
             txeName.Text = pet.Name;
@@ -87,6 +88,7 @@ namespace PetShelter
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
             return ms.ToArray();
+
         }
 
         public Image ByteArrayToImage(byte[] bytes)

@@ -19,7 +19,7 @@ namespace Petshelter.Admin
         {
             InitializeComponent();
         }
-        public ChangingPetInformationForm(int petID)
+        public ChangingPetInformationForm(int petID) : this()
         {
             _petId = petID;
         }
@@ -29,21 +29,25 @@ namespace Petshelter.Admin
 
             if (DesignMode)
                 return;
-            Pet pet = Dao.Pet.GetByPK(_petId);
 
+            Pet pet = Dao.Pet.GetByPK(_petId);
+    
             pictureEdit1.Image = ByteArrayToImage(pet.Picture);
             txeName.Text = pet.Name;
             txeAge.Text = pet.Age.ToString();
             txeFamily.Text = pet.Familly;
             cbbeGender.Text = pet.Gender;
+
             if(pet.HasVaccinated==true)
             {
                 checkVaccinated.CheckState = CheckState.Checked;
             }
+
             if(pet.HasNeutralized==true)
             {
                 checkNeutralized.CheckState = CheckState.Checked;
             }
+
             txeSpecies.Text = pet.Species;
             txeEtc.Text = pet.ETC;
             txeWeight.Text = pet.Weight.ToString();
@@ -71,8 +75,10 @@ namespace Petshelter.Admin
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            
+            
             byte[] dstPicture = imageToByteArray(pictureEdit1.Image);
-         
+            
           
 
             if (MessageBox.Show("저장하시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
