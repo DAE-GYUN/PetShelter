@@ -77,7 +77,7 @@ namespace Petshelter.Admin
 
             if (MessageBox.Show("저장하시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Dao.Pet.Insert(pet);
+                //Dao.Pet.Insert(pet);
                 Close();
             }
 

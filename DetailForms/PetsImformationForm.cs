@@ -58,6 +58,7 @@ namespace PetShelter
             if (pet == null)
                 return;
 
+
             // 클릭히먄 옆에 디테일에 데이터 이동
             pictureEdit1.Image = ByteArrayToImage(pet.Picture);
             txeName.Text = pet.Name;
@@ -78,6 +79,7 @@ namespace PetShelter
                 cbHasVaccinated.CheckState = CheckState.Checked;
             else
                 cbHasVaccinated.CheckState = CheckState.Unchecked;
+
 
         }
         public byte[] imageToByteArray(Image imageIn)
