@@ -56,7 +56,7 @@ namespace PetShelter
             if (pet == null)
                 return;
 
-            //pictureEdit1.Image = pet.Picture;
+           
             
             
         }
